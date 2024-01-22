@@ -1,14 +1,13 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <ctype.h>
 #include <unistd.h>
-#define _GNU_SOURCE
-#define _POSIX_C_SOURCE 200809L
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
