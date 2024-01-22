@@ -77,3 +77,27 @@ void at_stack(stack_t **new_node, __attribute__((unused))unsigned int ln_num)
 	head->next = temp;
 	temp->prev = head;
 }
+
+/**
+ * at_queue - add node to queue
+ * @new_nd: pointer to new node
+ * @ln_num: present the line number in the opcode
+ * Returm: void
+ */
+void at_queue(stack_t **new_nd, __attribute__((unused))unsigned int ln_num)
+{
+	stack_t *temp;
+
+	if (new_nd == NULL || *new_nd == NULL)
+		exit(EXIT_FAILURE);
+	if (head == NULL)
+	{
+		head = *new_nd;
+		return;
+	}
+	temp = head;
+	while (temp->next != NULL)
+		temp = temp->next;
+	temp->next = *new_nd;
+	(*new_nd)->prev = temp;
+}
